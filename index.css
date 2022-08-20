@@ -1,0 +1,81 @@
+*{
+    margin: 0px; padding: 0px;
+    box-sizing: border-box;
+}
+header{
+    height: 70px;
+    background-color: #5928e5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header ul li{
+    display: inline-block;
+    margin: 0px 20px;
+    padding: 6px 20px;
+}
+header a{
+    text-decoration: none;
+    color: white;
+    transition-duration: 1s;
+}
+header h3{margin-left: 20px;}
+header a:hover{
+    color: yellow;
+}
+
+.ham{
+    position: absolute;
+    top: 35%;
+    right: 5%;  
+}
+.ham .line{
+    height: 3px;
+    width: 20px;
+    background-color: white;
+    margin: 3px 0px;
+    transition: all .1s;
+}
+#toggle{
+    display: none;
+}
+header :checked ~ .ham :first-child{
+    transform: translateY(6px) rotate(45deg);
+    
+}
+header :checked ~ .ham :nth-child(2){
+    transform: rotate(-45deg);
+}
+header :checked ~ .ham :nth-child(3){
+    visibility: hidden;   
+}
+
+
+
+@media(max-width:496px){
+    header ul li{
+        display: block;
+    }
+    header{
+        position: relative;
+    }
+    header ul{
+        position: absolute;
+        top: 70px;
+        background-color: black;
+        height: 90vh;
+        width: 80%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        left: -100%;
+        transition-duration: .6s;
+    }
+    header :checked ~ ul{
+        left: 0%;
+    }
+    
+}
+
